@@ -1,5 +1,0 @@
-# Redirect all paths to index.html (for single-page applications or React/Next.js apps)
-*    /index.html   200
-
-# Optional: You can set up a custom 404 page
-/*   /404.html      404
