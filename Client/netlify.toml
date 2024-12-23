@@ -1,0 +1,26 @@
+[build]
+  # Specify the build command. Directus doesn't need a build step, so leave it empty.
+  command = ""
+
+  # Specify the directory where your build assets are located. For Directus, this is usually just the public directory.
+  publish = "public"
+
+[[redirects]]
+  # Handle API requests (we're assuming you have an API endpoint like '/api')
+  from = "/api/*"
+  to = "https://directcms.netlify.app/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  # Redirect all requests to index.html (for client-side routing)
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
+
+# Optional: Set up headers to configure caching or security headers.
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
